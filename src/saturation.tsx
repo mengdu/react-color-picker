@@ -3,7 +3,7 @@ export interface SaturationPickerOptions {
     l: number // Lightness 0~100
     s: number // Saturation 0~100
   }
-  color: string,
+  hue: number, // 0 ~ 359
   className?: string
   style?: React.CSSProperties
   onChange?: (value: {l: number; s: number}) => void
@@ -42,7 +42,7 @@ export default function SaturationPicker(props: SaturationPickerOptions) {
   return (
     <div
       className={['saturation-picker', props.className].filter(e => e).join(' ')}
-      style={{...props.style, background: props.color}}
+      style={{...props.style, background: `hsl(${props.hue}, 100%, 50%)`}}
       onMouseDown={handleMouseDown}>
       <div className="saturation-picker-slider" style={{left: left + '%', top: top + '%'}}></div>
     </div>

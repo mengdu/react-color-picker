@@ -10,13 +10,12 @@
     "preview": "vite preview"
   },
   "peerDependencies": {
-    "color-string": "^1.9.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "color": "^4.2.3"
   },
   "devDependencies": {
     "@types/color": "^3.0.6",
-    "@types/color-string": "^1.5.5",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
@@ -30,8 +29,5 @@
     "react-dom": "^18.2.0",
     "typescript": "^5.2.2",
     "vite": "^5.1.6"
-  },
-  "dependencies": {
-    "color": "^4.2.3"
   }
 }

@@ -1,6 +1,6 @@
 export interface AlphaPickerOptions {
   value: number // alpha value 0~100
-  color: string,
+  hue: number // 0~359 
   direction?: 'horizontal' | 'vertical'
   className?: string
   style?: React.CSSProperties
@@ -42,8 +42,8 @@ export default function AlphaPicker(props: AlphaPickerOptions) {
     ? {left: props.value + '%'}
     : {top: (100 - props.value) + '%'}
   const background = direction === 'horizontal'
-    ? `linear-gradient(to right, transparent, ${props.color})`
-    : `linear-gradient(to bottom, ${props.color}, transparent)`
+    ? `linear-gradient(to right, transparent, hsl(${props.hue}, 100%, 50%))`
+    : `linear-gradient(to bottom, hsl(${props.hue}, 100%, 50%), transparent)`
   return (
     <div
       className={['alpha-picker', direction, props.className].filter(e => e).join(' ')}
