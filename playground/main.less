@@ -1,0 +1,39 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.app {
+  margin: 0 auto;
+  width: 760px;
+}
+.color {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin: 5px;
+  vertical-align: middle;
+  // box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  // border-radius: 1px;
+  background-image: 
+    linear-gradient(45deg,rgba(0,0,0,0.1) 25%,transparent 0),
+    linear-gradient(45deg,transparent 75%,rgba(0,0,0,0.1) 0),
+    linear-gradient(45deg,rgba(0,0,0,0.1) 25%,transparent 0),
+    linear-gradient(45deg,transparent 75%,rgba(0,0,0,0.1) 0);
+  background-position: 0 0,5px 5px,5px 5px,10px 10px;
+  background-size: 10px 10px;
+  position: relative;
+
+  div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    // border-radius: 1px;
+    // box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  }
+}
