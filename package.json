@@ -1,18 +1,36 @@
 {
-  "name": "react-color-picker",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@lanyue/react-color-picker",
+  "version": "0.1.0",
+  "description": "A color picker component for React",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mengdu/react-color-picker.git"
+  },
+  "keywords": [
+    "react-color-picker"
+  ],
+  "author": "lanyueos@qq.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mengdu/react-color-picker/issues"
+  },
+  "homepage": "https://github.com/mengdu/react-color-picker#readme",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
-    "dev": "vite",
+    "dev": "vite playground",
     "build": "tsc && vite build",
+    "build:playground": "vite build playground",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite playground preview"
   },
   "peerDependencies": {
+    "color": "^4.2.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "color": "^4.2.3"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/color": "^3.0.6",
@@ -28,6 +46,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.2.2",
-    "vite": "^5.1.6"
+    "vite": "^5.1.6",
+    "vite-plugin-dts": "^3.7.3"
   }
 }

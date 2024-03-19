@@ -1,30 +1,43 @@
-# React + TypeScript + Vite
+# React Color Picker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A color picker component for React.
 
-Currently, two official plugins are available:
+[Live Demo](https://mengdu.github.io/react-data-viewer)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Usage
 
-## Expanding the ESLint configuration
+```sh
+npm install @lanyue/react-color-picker
+```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+```jsx
+import { useState } from 'react'
+import { ColorPicker } from '@lanyue/react-color-picker'
+import '@lanyue/react-color-picker/dist/style.css'
 
-- Configure the top-level `parserOptions` property like this:
+export default function App() {
+  const [color, setColor] = useState('hsla(200, 100%, 50%, 0.9)')
+  const presets = [
+    '#f44337', '#e91e63', '#9c27b0' , '#683ab8', '#3f52b5', '#2196F3', '#03A9F4', '#00BCD4', 'rgba(0, 0, 0, 0)', 'rgba(255, 255, 255, 0)',
+    '#009688', '#4CAF50', '#8BC34A' , '#CDDC39', '#FFEB3B', '#FFC107', '#ff9800', '#ff5722', '#795548', '#9E9E9E'
+  ]
+  return (
+    <>
+      <div className="color-view">
+        <div style={{background: `${color}`}}></div>
+      </div>&nbsp;
+      <span>{color}</span>
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
+      <ColorPicker
+        value={color}
+        presets={presets}
+        onChange={setColor}
+        />
+    </>
+  )
 }
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+**Preview**
+
+![](preview.png)
