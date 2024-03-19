@@ -179,16 +179,39 @@
     padding: 5px 10px;
     display: flex;
 
-    .hsla-input {
+    .hsla-input,
+    .rgba-input,
+    .hex-input {
       flex: 1 auto;
     }
   }
-  .hsla-input {
+  .hsla-input,
+  .rgba-input {
     display: flex;
     text-align: center;
     font-size: 12px;
     input {
       width: 35px;
+      margin: 0 3px;
+      outline: none;
+      border: solid 1px #e5e5e5;
+      border-radius: 3px;
+      text-align: center;
+      &:focus {
+        border-color: #b0b0b0;
+      }
+    }
+  }
+  .hex-input {
+    display: flex;
+    text-align: center;
+    font-size: 12px;
+
+    &>div {
+      width: 100%;
+    }
+
+    input {
       margin: 0 3px;
       outline: none;
       border: solid 1px #e5e5e5;

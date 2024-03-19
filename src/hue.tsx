@@ -13,12 +13,12 @@ export default function HuePicker(props: HuePickerOptions) {
       let v = 360 - (clientX - rect.left) / rect.width * 360
       if (v < 0) v = 0
       if (v > 359) v = 359
-      props.onChange!(~~v)
+      props.onChange!(Number(v.toFixed(2)))
     } else {
       let v = 360 - (clientY - rect.top) / rect.height * 360
       if (v < 0) v = 0
       if (v > 359) v = 359
-      props.onChange!(~~v)
+      props.onChange!(Number(v.toFixed(2)))
     }
   }
 
@@ -38,8 +38,8 @@ export default function HuePicker(props: HuePickerOptions) {
     document.addEventListener('mouseup', handleUp, false)
   }
   const style = direction === 'horizontal'
-    ? {left: Math.abs(359 - props.value) / 360 * 100 + '%'}
-    : {top: Math.abs(359 - props.value) / 360 * 100 + '%'}
+    ? {left: Math.abs(360 - props.value) / 360 * 100 + '%'}
+    : {top: Math.abs(360 - props.value) / 360 * 100 + '%'}
   return (
     <div
       className={['hue-picker', direction, props.className].filter(e => e).join(' ')}
