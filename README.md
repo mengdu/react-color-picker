@@ -2,7 +2,7 @@
 
 A color picker component for React.
 
-[Live Demo](https://mengdu.github.io/react-data-viewer)
+[Live Demo](https://mengdu.github.io/react-color-picker/)
 
 ## Usage
 
